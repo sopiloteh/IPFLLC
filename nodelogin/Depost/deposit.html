@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<style>
+	  .button{
+	    border: none;
+	    color: white;
+	    padding: 19px 32px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 16px;
+	    margin: 4px 2px;
+	    transition-duration: 0.4s;
+	    cursor: pointer;
+	  }
+	  
+	  .button1 {
+	    background-color: white;
+	    color: black;
+	    border: 2px solid #4CAF50;
+	  }
+	  .button1:hover {
+	    background-color: #4CAF50;
+	    color: white;
+	  }
+	  .button2 {
+	    background-color: white;
+	    color: black;
+	    border: 2px solid #008CBA;
+	  }
+	  .button2:hover {
+	    background-color: #008CBA;
+	    color: white;
+	  }
+	</style>
+	
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<title>Login</title>
+        <!-- the form awesome library is used to add icons to our form -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <!-- include the stylesheet file -->
+        <link href="/regis.css" rel="stylesheet" type="text/css">
+	</head>
+    <body>
+      <div class="withdrawel page">
+        <h1>
+          Deposit
+        </h1>
+        <br>
+       
+        <br>
+        <form>
+
+        
+        <label>Select Deposit form</label>
+        <select>
+          <option value ="Cash">Cash</option>
+          <option value ="Check">Check</option>
+          <option value ="Cashiers Check">Cashiers Check</option>
+        </select>
+        <br>
+        <label>Select Account to deposit to</label>
+        <select>
+          <option value ="Checking">Checking</option>
+          <option value ="Savings">Savings</option>
+          <option value ="Pokemon card slush account">Pokemon card slush account</option>
+        </select>
+        </form>
+        
+        <form action="/signup" method="post">
+          <label for="account">Amount to Deposit: </label>
+          <input type="text" name="chkAccount" placeholder="0.00" id="chkAccount" required>
+          <input type="submit" value="confirm"/>
+        </form>
+        
+  
+        <br>
+        <h2>Quick Transfer</h2>
+          <form action="/transfer" method="post">
+          <label>Select account to transfer from</label> 
+          <select>
+            <option value ="Checking">Checking</option>
+            <option value ="Savings">Savings</option>
+            <option value ="Pokemon card slush account">Pokemon card slush account</option>
+          </select>
+          <label>Select account to transfer to</label>
+          <select>
+            <option value ="Checking">Checking</option>
+            <option value ="Savings">Savings</option>
+            <option value ="Pokemon card slush account">Pokemon card slush account</option>
+          </select>
+          </form>
+          
+        <br>
+        <label>Fast Cash to transfer</label>
+        <br>
+        <button class="button button1">$20.00</button>
+        <button class="button button2">$40.00</button>
+        <br>
+        <button class="button button1">$60.00</button>
+        <button class="button button2">$80.00</button>
+        <br>
+        <button class="button button1">$100.00</button>
+        <button class="button button2">$120.00</button>
+      </div>
+  </body>
+</html>
