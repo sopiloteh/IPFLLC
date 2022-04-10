@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<title>landing_Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: black;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+</style>
+<body class="w3-aqua">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <a href="/nodelogin/dashboard/dash.html" class="w3-bar-item w3-button w3-padding-large white">
+    <p style="color:white;">Dashboard</p>
+    &nbsp;
+  </a>
+  <a href="#Accounts" class="w3-bar-item w3-button w3-padding-large white">
+    <p style="color:white">Accounts</p>
+    &nbsp;
+  </a>
+  <a href="#Transfers" class="w3-bar-item w3-button w3-padding-large white">
+    <p style="color:white">Transfers</p>
+    &nbsp;
+  </a>
+  <a href="/nodelogin/withdraw_page/withdraw_page.html" class="w3-bar-item w3-button w3-padding-large white">
+    <p style="color:white">Withdraw</p>
+    &nbsp;
+  </a>
+  <a href="#Offers" class="w3-bar-item w3-button w3-padding-large white">
+    <p style="color:white">Offers</p>
+    &nbsp;
+  </a>
+  
+  <a href="/" class="w3-bar-item w3-button w3-padding-large white" method="GET">
+  <p style="color:white">Logout</p>
+    &nbsp;
+    </a>
+  
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-blue w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#Dashboard" class="w3-bar-item w3-button" style="width:25% !important">Dashboard</a>
+    <a href="#Accounts" class="w3-bar-item w3-button" style="width:25% !important">Accounts</a>
+    <a href="#Transfers" class="w3-bar-item w3-button" style="width:25% !important">Transfers</a>
+    <a href="#Withdraw" class="w3-bar-item w3-button" style="width:25% !important">Withdraw</a>
+    <a href="#Offers" class="w3-bar-item w3-button" style="width:25% !important">Offers</a>
+    <a href="/" class="w3-bar-item w3-button" style="width:25% !important" method="GET">Log Out</a>
+    
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+</body>
+<style>
+  .title_Header {
+   border-style:solid;
+   border-color:white;
+   background-color:white; 
+  }
+  .general_boxes{
+    width: 800px;
+   padding-bottom: 100px; 
+  }
+  .main_box{
+   border-style:solid;
+   border-color:red;
+   color: black;
+    
+  }
+   /* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+} 
+/* Style for curracy box */
+
+input{
+        border-collapse: separate;
+        border-spacing: 15px;
+        padding: 10px;
+        font: 20px Arial;
+        width: 14.1%;
+      }
+  /*
+  input[type=button2]{
+    padding: 8px; 
+     margin-top: 5px; 
+     width: 49%;
+     color: white;
+     background-color: black;
+     border: none;
+     border-radius: 0px;
+     font-family: 'Poppins', sans-serif;
+     cursor: pointer;
+     display: inline;
+     text-align: center;
+     font-size:15px;
+     /* float: left; 
+   
+ }  */
+ 
+  </style>
+<!-- Header/Home -->
+<header>
+  <!--Link to user settings in gear_User_Settings-->
+<h1 style="color: black;" class ="title_Header">  &nbsp;Withdraw ... <a href="https://www.youtube.com/watch?v=RpRog7pnGmQ">  <img width="30" height="30" src="https://cdn.glitch.global/474b561a-b387-4527-8f1c-1b2b4af20246/gear_User_Settings.png?v=1646283828484" style="float: right;"> </h1>
+  </a>
+<main>
+  <section>
+    <div>
+      &nbsp;  
+  <h2 class ="main box w3-aqua">Please Choose An Account To Withdraw From
+  <h2 class ="main box w3-aqua"></h2> <p style = "text-align: left;"> ____________________________________________________________________________________________ </p>
+  <section>
+      <!--Drop down menu for account selection -->
+<div  class="custom-select" style="width:200px;">
+    <select>
+      <option value="0">Select Account:</option>
+      <option value="1">Checking</option>
+      <option value="2">Savings</option>
+      <option value="3">Offshore</option>
+    </select>
+  </div>
+  
+  <script>
+    var x, i, j, l, ll, selElmnt, a, b, c;
+    /*look for any elements with the class "custom-select":*/
+    x = document.getElementsByClassName("custom-select");
+    l = x.length;
+    for (i = 0; i < l; i++) {
+      selElmnt = x[i].getElementsByTagName("select")[0];
+      ll = selElmnt.length;
+      /*for each element, create a new DIV that will act as the selected item:*/
+      a = document.createElement("DIV");
+      a.setAttribute("class", "select-selected");
+      a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+      x[i].appendChild(a);
+      /*for each element, create a new DIV that will contain the option list:*/
+      b = document.createElement("DIV");
+      b.setAttribute("class", "select-items select-hide");
+      for (j = 1; j < ll; j++) {
+        /*for each option in the original select element,
+        create a new DIV that will act as an option item:*/
+        c = document.createElement("DIV");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        c.addEventListener("click", function(e) {
+            /*when an item is clicked, update the original select box,
+            and the selected item:*/
+            var y, i, k, s, h, sl, yl;
+            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+            sl = s.length;
+            h = this.parentNode.previousSibling;
+            for (i = 0; i < sl; i++) {
+              if (s.options[i].innerHTML == this.innerHTML) {
+                s.selectedIndex = i;
+                h.innerHTML = this.innerHTML;
+                y = this.parentNode.getElementsByClassName("same-as-selected");
+                yl = y.length;
+                for (k = 0; k < yl; k++) {
+                  y[k].removeAttribute("class");
+                }
+                this.setAttribute("class", "same-as-selected");
+                break;
+              }
+            }
+            h.click();
+        });
+        b.appendChild(c);
+      }
+      x[i].appendChild(b);
+      a.addEventListener("click", function(e) {
+          e.stopPropagation();
+          closeAllSelect(this);
+          this.nextSibling.classList.toggle("select-hide");
+          this.classList.toggle("select-arrow-active");
+        });
+    }
+    function closeAllSelect(elmnt) {
+      /*Closes all select boxes in the document,:*/
+      var x, y, i, xl, yl, arrNo = [];
+      x = document.getElementsByClassName("select-items");
+      y = document.getElementsByClassName("select-selected");
+      xl = x.length;
+      yl = y.length;
+      for (i = 0; i < yl; i++) {
+        if (elmnt == y[i]) {
+          arrNo.push(i)
+        } else {
+          y[i].classList.remove("select-arrow-active");
+        }
+      }
+      for (i = 0; i < xl; i++) {
+        if (arrNo.indexOf(i)) {
+          x[i].classList.add("select-hide");
+        }
+      }
+    }
+    document.addEventListener("click", closeAllSelect);
+    </script>
+    <br>
+    <input type='currency' value="123" placeholder='Type a number & click outside' />
+    <script>var currencyInput = document.querySelector('input[type="currency"]')
+        var currency = 'USD' // https://www.currency-iso.org/dam/downloads/lists/list_one.xml
+/*------------------------------Code for curracy box ----------------------------------------------------*/
+        onBlur({target:currencyInput})
+        currencyInput.addEventListener('focus', onFocus)
+        currencyInput.addEventListener('blur', onBlur)
+        function localStringToNumber( s ){
+          return Number(String(s).replace(/[^0-9.-]+/g,""))
+        }
+        function onFocus(e){
+          var value = e.target.value;
+          e.target.value = value ? localStringToNumber(value) : ''
+        }
+        function onBlur(e){
+          var value = e.target.value
+        
+          var options = {
+              maximumFractionDigits : 2,
+              currency              : currency,
+              style                 : "currency",
+              currencyDisplay       : "symbol"
+          }
+          
+          e.target.value = (value || value === 0) 
+            ? localStringToNumber(value).toLocaleString(undefined, options)
+            : ''
+        }</script>
+    <script>
+    /*------------------------------Code Confermation Button ----------------------------------------------------*/
+    function withdraw_Button_Function() {
+      var txt;
+      if (confirm("Are You Sure You Want To Withdraw ?")) {
+        txt = "Withdraw Confirmed !";
+      } else {
+        txt = "Withdraw Canceled!";
+      }
+      document.getElementById("button").innerHTML = txt;
+    }
+    </script>
+    <br>
+    <br>
+<button onclick="withdraw_Button_Function()">Withdraw</button>
+<p id="button"></p>
+    <div>
+      &nbsp; 
+      <h2 style="color: black;" class ="general_boxes w3-white"> 
+        <div class="panel panel-primary w3-blue" >
+          <h3>&nbsp;Checking</h3>
+        </div> 
+      </h2> 
+    </div>
+  </section>
+  <section>
+    <div>
+      &nbsp; 
+      <h2 style="color: black;" class ="general_boxes w3-white">
+        <div class="panel panel-primary w3-blue" >
+         <h3>&nbsp;Savings </h3>
+        </div> 
+      </h2>
+    &nbsp; 
+   </div>
+  </section>
+  <section>
+    <h2 style="color: black;" class ="general_boxes w3-white">
+      <div class="panel panel-primary w3-blue" >
+       <h3>&nbsp;Offshore Accounts</h3>
+      </div>
+    </h2>
+  </h2>
+  &nbsp; 
+  </div>
+  </section>  
+</main>
+</div>
+
+</header>
+<!-- END PAGE CONTENT -->
+
+
+</body>
+</html>
