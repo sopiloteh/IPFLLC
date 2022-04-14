@@ -1,8 +1,179 @@
 <!DOCTYPE html>
-<html>
-	<head>
-	<style>
-	  .button{
+<html lang="en">
+<head>
+  <title>Deposit</title>
+</head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: black;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+</style>
+
+<body class="w3-aqua">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <a href="/nodelogin/dashboard/dash.html" class="w3-bar-item w3-button w3-padding-large white">
+    <p style="color:white;">Dashboard</p>
+    &nbsp;
+  </a>
+  <a href="#Accounts" class="w3-bar-item w3-button w3-padding-large white">
+    <p style="color:white">Accounts</p>
+    &nbsp;
+  </a>
+  <a href="#Transfers" class="w3-bar-item w3-button w3-padding-large white">
+    <p style="color:white">Transfers</p>
+    &nbsp;
+  </a>
+  <a href="/nodelogin/withdraw_page/withdraw_page.html" class="w3-bar-item w3-button w3-padding-large white">
+    <p style="color:white">Withdraw</p>
+    &nbsp;
+  </a>
+  <a href="#Offers" class="w3-bar-item w3-button w3-padding-large white">
+    <p style="color:white">Offers</p>
+    &nbsp;
+  </a>
+  
+  <a href="/" class="w3-bar-item w3-button w3-padding-large white" method="GET">
+  <p style="color:white">Logout</p>
+    &nbsp;
+    </a>
+  
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-blue w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#Dashboard" class="w3-bar-item w3-button" style="width:25% !important">Dashboard</a>
+    <a href="#Accounts" class="w3-bar-item w3-button" style="width:25% !important">Accounts</a>
+    <a href="#Transfers" class="w3-bar-item w3-button" style="width:25% !important">Transfers</a>
+    <a href="#Withdraw" class="w3-bar-item w3-button" style="width:25% !important">Withdraw</a>
+    <a href="#Offers" class="w3-bar-item w3-button" style="width:25% !important">Offers</a>
+    <a href="/" class="w3-bar-item w3-button" style="width:25% !important" method="GET">Log Out</a>
+    
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">  
+</body>
+
+<!--Website button and form style formatting-->
+<style>
+  .title_Header {
+   border-style:solid;
+   border-color:white;
+   background-color:white; 
+  }
+  .general_boxes{
+    width: 800px;
+   padding-bottom: 100px; 
+  }
+  .main_box{
+   border-style:solid;
+   border-color:red;
+   color: black;
+    
+  }
+   /* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+} 
+/* Style for curracy box */
+
+input{
+        border-collapse: separate;
+        border-spacing: 15px;
+        padding: 10px;
+        font: 20px Arial;
+        width: 14.1%;
+      }
+  /*
+  input[type=button2]{
+    padding: 8px; 
+     margin-top: 5px; 
+     width: 49%;
+     color: white;
+     background-color: black;
+     border: none;
+     border-radius: 0px;
+     font-family: 'Poppins', sans-serif;
+     cursor: pointer;
+     display: inline;
+     text-align: center;
+     font-size:15px;
+     /* float: left; 
+   
+ }  */
+
+ .button{
 	    border: none;
 	    color: white;
 	    padding: 19px 32px;
@@ -32,78 +203,71 @@
 	  .button2:hover {
 	    background-color: #008CBA;
 	    color: white;
-	  }
-	</style>
-	
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,minimum-scale=1">
-		<title>Login</title>
-        <!-- the form awesome library is used to add icons to our form -->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-        <!-- include the stylesheet file -->
-        <link href="/regis.css" rel="stylesheet" type="text/css">
-	</head>
-    <body>
-      <div class="withdrawel page">
-        <h1>
-          Deposit
-        </h1>
-        <br>
-       
-        <br>
-        <form>
+    }
+</style>
 
-        
-        <label>Select Deposit form</label>
-        <select>
-          <option value ="Cash">Cash</option>
-          <option value ="Check">Check</option>
-          <option value ="Cashiers Check">Cashiers Check</option>
-        </select>
-        <br>
-        <label>Select Account to deposit to</label>
-        <select>
-          <option value ="Checking">Checking</option>
-          <option value ="Savings">Savings</option>
-          <option value ="Pokemon card slush account">Pokemon card slush account</option>
-        </select>
-        </form>
-        
-        <form action="/signup" method="post">
-          <label for="account">Amount to Deposit: </label>
-          <input type="text" name="chkAccount" placeholder="0.00" id="chkAccount" required>
-          <input type="submit" value="confirm"/>
-        </form>
-        
-  
-        <br>
-        <h2>Quick Transfer</h2>
-          <form action="/transfer" method="post">
-          <label>Select account to transfer from</label> 
-          <select>
-            <option value ="Checking">Checking</option>
-            <option value ="Savings">Savings</option>
-            <option value ="Pokemon card slush account">Pokemon card slush account</option>
-          </select>
-          <label>Select account to transfer to</label>
-          <select>
-            <option value ="Checking">Checking</option>
-            <option value ="Savings">Savings</option>
-            <option value ="Pokemon card slush account">Pokemon card slush account</option>
-          </select>
-          </form>
-          
-        <br>
-        <label>Fast Cash to transfer</label>
-        <br>
-        <button class="button button1">$20.00</button>
-        <button class="button button2">$40.00</button>
-        <br>
-        <button class="button button1">$60.00</button>
-        <button class="button button2">$80.00</button>
-        <br>
-        <button class="button button1">$100.00</button>
-        <button class="button button2">$120.00</button>
-      </div>
-  </body>
+<header>
+<h1 style="color: black;" class ="title_Header">  &nbsp;Deposit ... <a href="https://www.youtube.com/watch?v=RpRog7pnGmQ">  <img width="30" height="30" src="https://cdn.glitch.global/474b561a-b387-4527-8f1c-1b2b4af20246/gear_User_Settings.png?v=1646283828484" style="float: right;"> </h1>
+  </a>
+<main>
+  <br>
+
+<!--Form selection to choose from accounts to deposit too and transfer too -->
+  <form>
+    <label>Select Deposit form</label>
+    <select>
+      <option value ="Cash">Cash</option>
+      <option value ="Check">Check</option>
+      <option value ="Pokemon card slush account">Pokemon card slush account</option>
+    </select>
+    <label>Select Account to deposit to</label>
+    <select>
+      <option value ="Checking">Checking</option>
+      <option value ="Savings">Savings</option>
+      <option value ="Pokemon card slush account">Pokemon card slush account</option>
+    </select>
+  </form>
+
+  <form action="/signup" method="post">
+    <label for="account">Amount to Deposit: </label>
+    <input type="text" name="chkAccount" placeholder="0.00" id="chkAccount" required>
+    <input type="submit" value="confirm"/>
+  </form>
+
+<!--Quick transfer in the deposit page-->
+  <br>
+  <h2>Quick Transfer</h2>
+    <form action="/transfer" method="post">
+    <label>Select account to transfer from</label> 
+    <select>
+      <option value ="Checking">Checking</option>
+      <option value ="Savings">Savings</option>
+      <option value ="Pokemon card slush account">Pokemon card slush account</option>
+    </select>
+    <label>Select account to transfer to</label>
+    <select>
+      <option value ="Checking">Checking</option>
+      <option value ="Savings">Savings</option>
+      <option value ="Pokemon card slush account">Pokemon card slush account</option>
+    </select>
+    </form>
+
+<!--Quick transfer in the deposit page using buttons-->
+<br>
+<label>Fast Cash to transfer</label>
+<br>
+<button class="button button1">$20.00</button>
+<button class="button button2">$40.00</button>
+<br>
+<button class="button button1">$60.00</button>
+<button class="button button2">$80.00</button>
+<br>
+<button class="button button1">$100.00</button>
+<button class="button button2">$120.00</button>
+
+
+</main>
+
+</header>
+</body>
 </html>
