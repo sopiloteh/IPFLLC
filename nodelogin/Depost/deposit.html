@@ -41,6 +41,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <p style="color:white">Withdraw</p>
     &nbsp;
   </a>
+  <a href="/nodelogin/Depost/deposit.html" class="w3-bar-item w3-button w3-padding-large white">
+    <p style="color:white">Deposits</p>
+    &nbsp;
+  </a>
   <a href="#Offers" class="w3-bar-item w3-button w3-padding-large white">
     <p style="color:white">Offers</p>
     &nbsp;
@@ -59,6 +63,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <a href="#Dashboard" class="w3-bar-item w3-button" style="width:25% !important">Dashboard</a>
     <a href="#Accounts" class="w3-bar-item w3-button" style="width:25% !important">Accounts</a>
     <a href="#Transfers" class="w3-bar-item w3-button" style="width:25% !important">Transfers</a>
+    <a href="#Deposit" class="w3-bar-item w3-button" style="width:25% !important">Deposit</a>
     <a href="#Withdraw" class="w3-bar-item w3-button" style="width:25% !important">Withdraw</a>
     <a href="#Offers" class="w3-bar-item w3-button" style="width:25% !important">Offers</a>
     <a href="/" class="w3-bar-item w3-button" style="width:25% !important" method="GET">Log Out</a>
@@ -218,20 +223,20 @@ input{
     <select>
       <option value ="Cash">Cash</option>
       <option value ="Check">Check</option>
-      <option value ="Pokemon card slush account">Pokemon card slush account</option>
+      <option value ="Money_Order">Money Order</option>
     </select>
     <label>Select Account to deposit to</label>
     <select>
       <option value ="Checking">Checking</option>
       <option value ="Savings">Savings</option>
-      <option value ="Pokemon card slush account">Pokemon card slush account</option>
+      <option value ="Pokemon_Slush">Pokemon Slush</option>
     </select>
   </form>
 
   <form action="/signup" method="post">
     <label for="account">Amount to Deposit: </label>
-    <input type="text" name="chkAccount" placeholder="0.00" id="chkAccount" required>
-    <input type="submit" value="confirm"/>
+    <input type="text" name="deposit" placeholder="0.00" id="deposit" required>
+    <input type="submit" value="confirm" id="submit" required/>
   </form>
 
 <!--Quick transfer in the deposit page-->
@@ -242,13 +247,13 @@ input{
     <select>
       <option value ="Checking">Checking</option>
       <option value ="Savings">Savings</option>
-      <option value ="Pokemon card slush account">Pokemon card slush account</option>
+      <option value ="Pokemon_Slush">Pokemon Slush</option>
     </select>
     <label>Select account to transfer to</label>
     <select>
       <option value ="Checking">Checking</option>
       <option value ="Savings">Savings</option>
-      <option value ="Pokemon card slush account">Pokemon card slush account</option>
+      <option value ="Pokemon_Slush">Pokemon Slush</option>
     </select>
     </form>
 
@@ -256,18 +261,22 @@ input{
 <br>
 <label>Fast Cash to transfer</label>
 <br>
-<button class="button button1">$20.00</button>
-<button class="button button2">$40.00</button>
+<button id="buttonA" class="button button1">$20.00</button>
+<button id="buttonB" class="button button2">$40.00</button>
 <br>
-<button class="button button1">$60.00</button>
-<button class="button button2">$80.00</button>
+<button id="buttonC" class="button button1">$60.00</button>
+<button id="buttonD" class="button button2">$80.00</button>
 <br>
-<button class="button button1">$100.00</button>
-<button class="button button2">$120.00</button>
+<button id="buttonE" class="button button1">$100.00</button>
+<button id="buttonF" class="button button2">$120.00</button>
+<br>
+<button id="transfer">Transfer</button>
 
 
 </main>
 
 </header>
+
+<script> type="text/javascript",src="deposit.js"</script>
 </body>
 </html>
