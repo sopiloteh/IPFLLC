@@ -2,6 +2,11 @@ const mysql = require('mysql');
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
+const app = express();
+const readline = require('readline').createInterface({
+	input: process.stdin,
+	output: process.stdout
+  });
 
 // variables for deposit.html page
 const deposit = document.getElementById("deposit");
@@ -17,14 +22,13 @@ const value = document.getElementById("value");
 const connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
-	password : 'K@tty1996',
+	password : 'password',
 	database : 'users',
 	port:3306
 	
 });
 
-const app = express();
-
+// javascript session creation to keep it all hidden under the hood
 app.use(session({
 	secret: 'secret',
 	resave: true,
@@ -38,65 +42,33 @@ const formatter = new Intl.NumberFormat('en-US',{
 	minimumFractionDigits: 2,
 });
 
-switch (value){
-	case Cash:
-		if (value == Cash && value == Checking){
-			// do something
-		}
-		else if (value == Cash && value == Savings){
-			// do something
-		}
-		else if (value == Cash && value == Pokemon_Slush){
-			// do something
-		}
-		else{
-			break;
-		}
-	break;	
-	case Check:
-		if (value == Check && value == Checking){
-			// save to table in mysql
-		}
-		else if (value == Check && value == Savings){
-			// save to table in mysql
-		}
-		else if (value == Check && value == Pokemon_Slush){
-			// save to table in mysql
-		}
-		else{
-			break;
-		}
-	break;
-	case Money_Order:
-		if (value == Money_Order && value == Checking){
-			// save to table in mysql
-		}
-		else if (value == Money_Order && value == Savings){
-			// save to table in mysql
-		}
-		else if (value == Money_Order && value == Pokemon_Slush){
-			// save to table in mysql
-		}
-		else{
-			break;
-		}
-	break;
-}
-
-submit.addEventListener('click', () =>{
-	//something inside
-});
-
+// initalize
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'static')));
 
-app.get('/', function(_request, response) {
+app.get('/deposit', function(request, response) {
 	// Render deposit template
-	response.sendFile(path.join(__dirname + '/deposit.html'));
+	let amount = request.amount;
+	let query = 'INSERT INTO usersinfo temp VALUES (?);';
 });
 
-app.post('/', function(_request, response){
+if(selection==1){
+	var trans = "";
+	var query = connection.query(trans, ['c_balance'], function(err, result){
+		//something
+	})
+}
+else{
+	var trans = "";
+	var query = connection.query(trans, ['s_balance'], function(err, result){
+		//something
+	})
+}
+
+app.post('/', function(request, response){
   response.sendFile(path.join(__dirname + '/nodelogin//Depost/deposit.html'));
   app.use(express.static(path.join(__dirname, '/nodelogin/static')));
 });
+
+
