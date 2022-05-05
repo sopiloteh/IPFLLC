@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<title>Login</title>
+        <!-- the form awesome library is used to add icons to our form -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <!-- include the stylesheet file -->
+        <link href="/forgotstyle.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		
+		
+		<div class="Forgotpassword">
+			<h1>Forgot Password</h1>
+			<form action="/forgotpassword" method="POST">
+				<label for="email">
+					Enter Email that you used:
+				</label>
+                <input type="email" name="email" placeholder="email" id="email" required>
+                
+                <label for="Security1">
+
+                    Security Question1: What is your favorite sport?:
+                </label>
+				<input type="Security1" name="Security1" placeholder="Question1" id="Security1" required>
+                <label for="Security2">
+                    Security Question2: What city were you born in?:
+                </label>
+				<input type="Security2" name="Security2" placeholder="Question2" id="Security2" required>
+				<input type="cancel" onclick="history.back()" value="Cancel"/> 
+				<input type="submit" value="submit"/>
+				<!--<input type="submit" onclick="parent.location='/nodelogin'" value="Sign Up" method="POST"/> -->
+			</form>
+	
+		</div>
+	</body>
+</html>

@@ -1,192 +1,193 @@
-
- * {
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
-    font-size: 16px;
-    
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+  font-size: 16px;
+  
 }
 body {
-    background-color: #435165;
+  background-color: #435165;
 }
 .login {
-    width: 400px;
-    background-color: #ffffff;
-    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-    margin: 100px auto;
-    font-weight: bold;
+  width: 400px;
+  background-color: #ffffff;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  margin: 100px auto;
+  font-weight: bold;
 
 }
 .login h1 {
-    text-align: center;
-    color: #5b6574;
-    font-size: 24px;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
+  text-align: center;
+  color: #5b6574;
+  font-size: 24px;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #dee0e4;
 }
 .login form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
 }
 .login form label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    background-color: #3274d6;
-    color: #ffffff;
-    font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #3274d6;
+  color: #ffffff;
+  font-weight: bold;
 
 }
 .login form input[type="password"], .login form input[type="text"] {
-    width: 310px;
-    height: 50px;
-    border: 1px solid #dee0e4;
-    margin-bottom: 20px;
-    padding: 0 15px;
-    
+  width: 310px;
+  height: 50px;
+  border: 1px solid #dee0e4;
+  margin-bottom: 20px;
+  padding: 0 15px;
+  
 }
 .login form input[type="submit"] {
-    width: 100%;
-    padding: 15px;
-   margin-top: 20px;
-    background-color: #3274d6;
-    border: 0;
-    cursor: pointer;
-    font-weight: bold;
-    color: #ffffff;
-    transition: background-color 0.2s;
+  width: 100%;
+  padding: 15px;
+ margin-top: 20px;
+  background-color: #3274d6;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  transition: background-color 0.2s;
 }
 
 .login form input[type="submit"]:hover {
-  background-color: #2868c7;
-    transition: background-color 0.2s;
+background-color: #2868c7;
+  transition: background-color 0.2s;
 }
 .btn {
-  border: none;
-  background-color: inherit;
-  padding: 14px 28px;
-  font-size: 16px;
-  cursor: pointer;
-  display: inline-block;
+border: none;
+background-color: inherit;
+padding: 14px 28px;
+font-size: 16px;
+cursor: pointer;
+display: inline-block;
 }
 .btn:hover {background: #eee;}
 .sign_Up {color: black;}
 .forgot_Passwd {color: black;}
 body {
-    background-color: rgb(13,235,243);
-    font-family: 'Poppins', sans-serif;
-    margin:0px;
-    padding: 0px;
+  background-color: rgb(13,235,243);
+  font-family: 'Poppins', sans-serif;
+  margin:0px;
+  padding: 0px;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    
-  }
-  #Header{
-    float: left;
-    font-size: 20px;
-    font-weight: bold;
-    font-style: italic;
-    color: black;
-    inline-size: auto;
-    
-  }
-  li {
-    float: right; 
-  }
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
   
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  li a:hover {
-    background-color: #111;
-  }
+}
+#Header{
+  float: left;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  color: black;
+  inline-size: auto;
+  
+}
+li {
+  float: right; 
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: #111;
+}
 #form {
-    width: 300px;
-    margin: 20vh auto 0 auto;
-    padding: 20px;
-    background-color: whitesmoke;
-    border-radius: 4px;
-    font-size: 12px;
+  width: 300px;
+  margin: 20vh auto 0 auto;
+  padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 4px;
+  font-size: 12px;
 }
 
 #form h1 {
-    color: #0f2027;
-    text-align: center;
-    
+  color: #0f2027;
+  text-align: center;
+  
 }
 
 
 input[type=button1]{
-    padding: 8px;
-     margin-top: 5px;
-     width: 49%;
-     color: white;
-     background-color: rgb(33, 103, 105);
-     border: none;
-     border-radius: 0px;
-     font-family: 'Poppins', sans-serif;
-     cursor: pointer;
-     display: inline;
-     font-size:14px;
-     float: right;
- }
- input[type=button2]{
-    padding: 8px;
-     margin-top: 5px;
-     width: 49%;
-     color: white;
-     background-color: rgb(33, 103, 105);
-     border: none;
-     border-radius: 0px;
-     font-family: 'Poppins', sans-serif;
-     cursor: pointer;
-     display: inline;
-     font-size:14px;
-     float: left;
-   
- }
+  padding: 8px;
+   margin-top: 5px;
+   width: 49%;
+   color: white;
+   background-color: rgb(33, 103, 105);
+   border: none;
+   border-radius: 0px;
+   font-family: 'Poppins', sans-serif;
+   cursor: pointer;
+   display: inline;
+   font-size:14px;
+   float: right;
+   text-align: center;
+}
+input[type=button2]{
+  padding: 8px;
+   margin-top: 5px;
+   width: 49%;
+   color: white;
+   background-color: rgb(33, 103, 105);
+   border: none;
+   border-radius: 0px;
+   font-family: 'Poppins', sans-serif;
+   cursor: pointer;
+   display: inline;
+   font-size:14px;
+   float: left;
+   text-align: center;
+ 
+}
 
 .input-control {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .input-control input {
-    border: 2px solid #f0f0f0;
-	border-radius: 4px;
-	display: block;
-	font-size: 12px;
-	padding: 10px;
-	width: 100%;
+  border: 2px solid #f0f0f0;
+border-radius: 4px;
+display: block;
+font-size: 12px;
+padding: 10px;
+width: 100%;
 }
 
 .input-control input:focus {
-    outline: 0;
+  outline: 0;
 }
 
 
 .header {
-    
-    text-align: center;
-    color: black;
-    font-size: 25px;
-    font-weight: bold;
-    
-  }
-  p {
-    margin: 0;
-    text-indent: 1ch;
-  }
+  
+  text-align: center;
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+  
+}
+p {
+  margin: 0;
+  text-indent: 1ch;
+}

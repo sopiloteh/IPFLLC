@@ -42,7 +42,21 @@ body {
     padding: 0 15px;
 }  
 .registration form input[type="submit"] {
-    width: 100%;
+    width: 45%;
+    padding: 15px;
+
+   margin-top: 20px;
+    background-color: #3274d6;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+    float:right; 
+
+}
+.registration form input[type="cancel"] {
+    width: 40%;
     padding: 15px;
    margin-top: 20px;
     background-color: #3274d6;
@@ -51,15 +65,15 @@ body {
     font-weight: bold;
     color: #ffffff;
     transition: background-color 0.2s;
+    /*float:left; */
+    text-align: center; 
+
 }
 .registration form input[type="submit"]:hover {
   background-color: #2868c7;
     transition: background-color 0.2s;
 }
-.registration form .error {
-    color: #ff3860;
-    font-size: 15px;
-    height: 70px;
-  
-    /*error message*/
-}
+.registration form input[type="cancel"]:hover {
+    background-color: #2868c7;
+      transition: background-color 0.2s;
+  }
