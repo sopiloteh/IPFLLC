@@ -40,27 +40,30 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <a href="/dash" class="w3-bar-item w3-button w3-padding-large white" method="GET">
+  <a href="/nodelogin/dashboard/dash.html" class="w3-bar-item w3-button w3-padding-large white">
     <p style="color:white;">Dashboard</p>
     &nbsp;
   </a>
-  <a href="/accounts" class="w3-bar-item w3-button w3-padding-large white" method="GET">
+  <a href="#Accounts" class="w3-bar-item w3-button w3-padding-large white">
     <p style="color:white">Accounts</p>
     &nbsp;
   </a>
-  <a href="/transfer" class="w3-bar-item w3-button w3-padding-large white" method="GET">
+  <a href="#Transfers" class="w3-bar-item w3-button w3-padding-large white">
     <p style="color:white">Transfers</p>
     &nbsp;
   </a>
-  <a href="/withdraw" class="w3-bar-item w3-button w3-padding-large white" method="GET">
+  <a href="/nodelogin/withdraw_page/withdraw_page.html" class="w3-bar-item w3-button w3-padding-large white">
     <p style="color:white">Withdraw</p>
     &nbsp;
   </a>
-  <a href="/deposit" class="w3-bar-item w3-button w3-padding-large white" method="GET">
+  <a href="/nodelogin/Depost/deposit.html" class="w3-bar-item w3-button w3-padding-large white">
     <p style="color:white">Deposits</p>
     &nbsp;
   </a>
-
+  <a href="#Offers" class="w3-bar-item w3-button w3-padding-large white">
+    <p style="color:white">Offers</p>
+    &nbsp;
+  </a>
   
   <a href="/" class="w3-bar-item w3-button w3-padding-large white" method="GET">
   <p style="color:white">Logout</p>
@@ -72,11 +75,12 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <!-- Navbar on small screens (Hidden on medium and large screens) -->
 <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
   <div class="w3-bar w3-blue w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="/dash" class="w3-bar-item w3-button" style="width:25% !important" method="GET">Dashboard</a>
-    <a href="/accounts" class="w3-bar-item w3-button" style="width:25% !important" method="GET">Accounts</a>
-    <a href="/transfer" class="w3-bar-item w3-button" style="width:25% !important" method="GET">Transfers</a>
-    <a href="/deposit" class="w3-bar-item w3-button" style="width:25% !important" method="GET">Deposit</a>
-    <a href="/withdraw" class="w3-bar-item w3-button" style="width:25% !important" method="GET">Withdraw</a>
+    <a href="#Dashboard" class="w3-bar-item w3-button" style="width:25% !important">Dashboard</a>
+    <a href="#Accounts" class="w3-bar-item w3-button" style="width:25% !important">Accounts</a>
+    <a href="#Transfers" class="w3-bar-item w3-button" style="width:25% !important">Transfers</a>
+    <a href="#Deposit" class="w3-bar-item w3-button" style="width:25% !important">Deposit</a>
+    <a href="#Withdraw" class="w3-bar-item w3-button" style="width:25% !important">Withdraw</a>
+    <a href="#Offers" class="w3-bar-item w3-button" style="width:25% !important">Offers</a>
     <a href="/" class="w3-bar-item w3-button" style="width:25% !important" method="GET">Log Out</a>
     
   </div>
@@ -244,7 +248,7 @@ input{
     </select>
   </form>
 
-  <form action="/deposit" method="GET">
+  <form action="/signup" method="post">
     <label for="account">Amount to Deposit: </label>
     <input type="text" name="deposit" placeholder="0.00" id="deposit" required>
     <input type="submit" value="confirm" id="submit" required/>
@@ -287,7 +291,7 @@ input{
 </main>
 
 </header>
-
+<a href="https://www.animatedimages.org/cat-money-100.htm"><img src="https://www.animatedimages.org/data/media/100/animated-money-image-0011.gif" style="position:absolute; float:right; right:0px; z-index:2" /></a>
 <script> type="text/javascript",src="deposit.js"</script>
 </body>
 </html>
