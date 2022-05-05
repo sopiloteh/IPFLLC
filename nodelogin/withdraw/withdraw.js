@@ -5,6 +5,11 @@ const path = require('path');
 
 
 const app = express();
+const readline = require('readline').createInterface({
+	input: process.stdin,
+	output: process.stdout
+  });
+
 const connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
@@ -13,8 +18,6 @@ const connection = mysql.createConnection({
 	port:3306
 	
 });
-
-
 app.use(session({
 	secret: 'secret',
 	resave: true,
@@ -22,6 +25,8 @@ app.use(session({
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+console.log("Here!");
 
 connection.connect((error) => {
     if(error) throw error;
@@ -33,13 +38,32 @@ connection.connect((error) => {
 app.post('/withdraw', function(request, response) {
 	let currency = request.body.currency;
     let Email = request.session.email;
+	let choice = request.body.select
+	
     connection.query('UPDATE usersinfo SET temp = ? WHERE email = ?',[currency,Email], function(error,results,fields)
-	{
-		
-	if (error) throw error;
-	console.log("temp updated.");
-	console.log(results);
+    {
+
+    if (error) throw error;
+    console.log("temp updated.");
+
     });
+
+    if(choice == "checking")
+    {
+    connection.query('UPDATE usersinfo SET c_balance = (c_balance-temp) WHERE email = ?',[Email], function(error, results,fields) {
+        if (error) throw error;
+        console.log("withdraw on C bal");
+
+    }); 
+}
+    else
+    {
+    connection.query('UPDATE usersinfo SET s_balance = (s_balance-temp) WHERE email = ?',[Email], function(error, results,fields) {
+        if (error) throw error;
+        console.log("withdraw on S bal");
+
+    });
+}
     response.redirect('/withdraw');
 });
 module.exports = app;

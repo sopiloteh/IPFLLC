@@ -29,25 +29,23 @@ app.get('/', function(request, response) {
 
 	}); 
 	
-	app.get('/withdraw', function(request, response) {
+	app.get('/withdraw', function(request, response) {  //need to include to this because it first ran with node login.js
 		response.send(request.session.email);
-		response.sendFile(path.join(__dirname + '/withdraw_page/withdraw_page.html'));
-		app.post('/withdraws',require('./withdraw_page/withdraw'));
-			
-	
-		}); 
+			response.sendFile(path.join(__dirname + '/withdraw/withdraw.html'));
+			app.post('/transfers',require('./withdraw/withdraw'));
+		
+		
+		});
 		app.get('/deposit', function(request, response) {  //need to include to this because it first ran with node login.js
-	
+			response.send(request.session.email);
 			response.sendFile(path.join(__dirname + '/Depost/deposit.html'));
-			//app.use(express.static(path.join(__dirname, '/Depost/public')));
-			app.post('/passwordreset',require('./Depost/deposit'));
+			app.post('/deposit',require('./Depost/deposit'));
 		
 		
 		}); 
 		app.get('/transfer', function(request, response) {  //need to include to this because it first ran with node login.js
-		response.send(request.session.email);
+			response.send(request.session.email);
 			response.sendFile(path.join(__dirname + '/transfer/transfer.html'));
-			//app.use(express.static(path.join(__dirname, '/Depost/public')));
 			app.post('/transfers',require('./transfer/transferapp'));
 		
 		

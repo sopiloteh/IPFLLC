@@ -38,13 +38,39 @@ app.post('/transfers', function(request, response) {
 	// Capture the input fields
 	let amount = request.body.amount;
     let Email = request.session.email;
+	let choice = request.body.select;
+	console.log(choice);
     connection.query('UPDATE usersinfo SET temp = ? WHERE email = ?',[amount,Email], function(error,results,fields)
 	{
 		
 	if (error) throw error;
 	console.log("temp updated.");
 	console.log(results);
-});
+	});
+if(choice == "checking")
+{
+    connection.query('UPDATE usersinfo SET c_balance = (c_balance+temp) WHERE email = ?',[Email], function(error, results,fields) {
+        if (error) throw error;
+        console.log("C bal + temp");
+
+    }); 
+	connection.query('UPDATE usersinfo SET s_balance = (s_balance-temp) WHERE email = ?',[Email], function(error, results,fields) {
+        if (error) throw error;
+        console.log("S bal - temp");
+	});
+}
+    else
+{
+    connection.query('UPDATE usersinfo SET s_balance = (s_balance+temp) WHERE email = ?',[Email], function(error, results,fields) {
+        if (error) throw error;
+        console.log("S bal + temp");
+
+    });
+	connection.query('UPDATE usersinfo SET c_balance = (c_balance-temp) WHERE email = ?',[Email], function(error, results,fields) {
+        if (error) throw error;
+        console.log("C bal - temp");
+	});
+}
 /*
 if(selection==1)
 {
@@ -68,3 +94,4 @@ response.redirect('/transfer');
 
 
 module.exports = app;
+

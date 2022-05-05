@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>landing_Page</title>
+<title>Withdrawal</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -26,7 +26,13 @@ $(document).ready(function($)
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
 /* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: black;}
+.w3-sidebar {width: 120px;background: black; display: block;}
+.w3-sidebar a { display: block;
+padding: 10px;
+text-decoration: none;
+
+}
+
 /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
 #main {margin-left: 120px}
 /* Remove margins from "page content" on small screens */
@@ -36,24 +42,24 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <a href="/dash" class="w3-bar-item w3-button w3-padding-large white">
-    <p style="color:white;">Dashboard</p>
+  <a href="/dash" class="w3-bar-item w3-button w3-padding-large white" method="GET">
+    <p style="color:white">Dashboard</p>
     &nbsp;
   </a>
-  <a href="#Accounts" class="w3-bar-item w3-button w3-padding-large white">
+  <a href="/accounts" class="w3-bar-item w3-button w3-padding-large white" method="GET">
     <p style="color:white">Accounts</p>
     &nbsp;
   </a>
-  <a href="#Transfers" class="w3-bar-item w3-button w3-padding-large white">
+  <a href="/transfer" class="w3-bar-item w3-button w3-padding-large white" method="GET">
     <p style="color:white">Transfers</p>
     &nbsp;
   </a>
-  <a href="/withdraw" class="w3-bar-item w3-button w3-padding-large white">
+  <a href="/withdraw" class="w3-bar-item w3-button w3-padding-large white" method="GET">
     <p style="color:white">Withdraw</p>
     &nbsp;
   </a>
-  <a href="#Offers" class="w3-bar-item w3-button w3-padding-large white">
-    <p style="color:white">Offers</p>
+  <a href="/deposit" class="w3-bar-item w3-button w3-padding-large white" method="GET">
+    <p style="color:white">Deposits</p>
     &nbsp;
   </a>
   
@@ -67,11 +73,11 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <!-- Navbar on small screens (Hidden on medium and large screens) -->
 <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
   <div class="w3-bar w3-blue w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="#Dashboard" class="w3-bar-item w3-button" style="width:25% !important">Dashboard</a>
-    <a href="#Accounts" class="w3-bar-item w3-button" style="width:25% !important">Accounts</a>
-    <a href="#Transfers" class="w3-bar-item w3-button" style="width:25% !important">Transfers</a>
-    <a href="#Withdraw" class="w3-bar-item w3-button" style="width:25% !important">Withdraw</a>
-    <a href="#Offers" class="w3-bar-item w3-button" style="width:25% !important">Offers</a>
+    <a href="/dash" class="w3-bar-item w3-button" style="width:25% !important" method="GET">Dashboard</a>
+    <a href="/accounts" class="w3-bar-item w3-button" style="width:25% !important" method="GET">Accounts</a>
+    <a href="/transfer" class="w3-bar-item w3-button" style="width:25% !important" method="GET">Transfers</a>
+    <a href="/withdraw" class="w3-bar-item w3-button" style="width:25% !important" method="GET">Withdraw</a>
+    <a href="/deposit" class="w3-bar-item w3-button" style="width:25% !important" method="GET">Deposits</a>
     <a href="/" class="w3-bar-item w3-button" style="width:25% !important" method="GET">Log Out</a>
     
   </div>
@@ -96,6 +102,8 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
    color: black;
     
   }
+
+ 
    /* The container must be positioned relative: */
 .custom-select {
   position: relative;
@@ -196,14 +204,15 @@ input{
   <h2 class ="main box w3-aqua"></h2> <p style = "text-align: left;"> ____________________________________________________________________________________________ </p>
   <section>
       <!--Drop down menu for account selection -->
-<div  class="custom-select" style="width:200px;">
-    <select>
-      <option value="0">Select Account:</option>
-      <option value="1">Checking</option>
-      <option value="2">Savings</option>
-      <option value="3">Offshore</option>
-    </select>
-  </div>
+      <form action="/withdraw" method="POST">
+<select  class="custom-select" name="select" style="width:200px;">
+    <!-- note:in order to link app.post with html use name=-->
+      <option name="" value="0">Select account:</option>
+      <option name="checking" value="checking">Checking</option>
+      <option name="saving" value="saving">Saving</option>
+      
+    
+</select>
   
   <script>
     var x, i, j, l, ll, selElmnt, a, b, c;
@@ -281,9 +290,11 @@ input{
     document.addEventListener("click", closeAllSelect);
     </script>
     <br>
-    <input type='currency' value="123" placeholder='Type a number & click outside' />
+    <!--<form action="/withdraw" method="POST"> -->
+    <input type="number" name="currency" placeholder='0.00' required/>
     <script>var currencyInput = document.querySelector('input[type="currency"]')
-        var currency = 'USD' // https://www.currency-iso.org/dam/downloads/lists/list_one.xml
+        var currency = 'USD' 
+  // https://www.currency-iso.org/dam/downloads/lists/list_one.xml
 /*------------------------------Code for curracy box ----------------------------------------------------*/
         onBlur({target:currencyInput})
         currencyInput.addEventListener('focus', onFocus)
@@ -302,7 +313,7 @@ input{
               maximumFractionDigits : 2,
               currency              : currency,
               style                 : "currency",
-              currencyDisplay       : "symbol"
+              
           }
           
           e.target.value = (value || value === 0) 
@@ -314,7 +325,9 @@ input{
     function withdraw_Button_Function() {
       var txt;
       if (confirm("Are You Sure You Want To Withdraw ?")) {
+
         txt = "Withdraw Confirmed !";
+
       } else {
         txt = "Withdraw Canceled!";
       }
@@ -325,6 +338,7 @@ input{
     <br>
 <button onclick="withdraw_Button_Function()">Withdraw</button>
 <p id="button"></p>
+</form>
     <div>
       &nbsp; 
       <h2 style="color: black;" class ="general_boxes w3-white"> 
