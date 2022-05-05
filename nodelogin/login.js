@@ -104,9 +104,9 @@ app.get('/createpass', function(request, response) {  //need to include to this 
 }); 
 app.get('/withdraw', function(request, response) {
 	
-	response.sendFile(path.join(__dirname + '/withdraw_page/withdraw_page.html'));
+	response.sendFile(path.join(__dirname + '/withdraw/withdraw.html'));
 		//app.use(express.static(path.join(__dirname, '/nodelogin/static')));
-		
+		app.post('/withdraw',require('./withdraw/withdraw'));
 
 	}); 
 	app.get('/deposit', function(request, response) {  //need to include to this because it first ran with node login.js
@@ -133,13 +133,7 @@ app.get('/withdraw', function(request, response) {
 		app.post('/transfers',require('./transfer/transferapp'));
 	
 	}); 
-	app.get('/withdraw', function(request, response) {
-	
-		response.sendFile(path.join(__dirname + '/withdraw_page/withdraw_page.html'));
-		app.post('/withdraws',require('./withdraw_page/withdraw'));
-			
-	
-		}); 
+
 module.exports = app;
 
 app.listen(5000);
