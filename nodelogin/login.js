@@ -2,11 +2,12 @@ const mysql = require('mysql');
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
+var alert = require('alert');
 
 const connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
-	password : 'K@tty1996',
+	password : 'password',
 	database : 'users',
 	port:3306
 	
@@ -49,13 +50,14 @@ app.post('/auth', function(request, response) {
 				// go to home page
 				response.redirect('/dash');
 			} else {
-				response.redirect('/');
-				//throw "Incorrect email/password";
+				alert('Wrong password or email, please try again.');
+					response.redirect('/');
+					
 			}			
 			response.end();
 		});
 	} else {
-		response.send('Please enter Email and Password!');
+		alert("Please enter Email and password.");
 		response.end();
 	}
 });
@@ -64,7 +66,8 @@ app.post('/auth', function(request, response) {
 app.get('/dash', function(request, response) {
 	
 			response.sendFile(path.join(__dirname + '/dashboard/dash.html'));
-		
+			//app.post('/signup',require('./createaccount/app'));
+		//response.send(request.session.email);
 			
 		
 
@@ -83,6 +86,60 @@ app.get('/createaccount', function(request, response) {
 
 
 });
+app.get('/forgotpass', function(request, response) {
+	
+	response.sendFile(path.join(__dirname + '/forgotpass/forgotpass.html'));
+	app.use(express.static(path.join(__dirname, '/forgotpass/public')));
+	app.post('/forgotpassword',require('./forgotpass/forgotpassapp'));
+	
+
+});
+app.get('/createpass', function(request, response) {  //need to include to this because it first ran with node login.js
+	
+	response.sendFile(path.join(__dirname + '/createpassword/createpass.html'));
+	app.use(express.static(path.join(__dirname, '/createpassword/public')));
+	app.post('/passwordreset',require('./createpassword/createpassapp'));
+
+
+}); 
+app.get('/withdraw', function(request, response) {
+	
+	response.sendFile(path.join(__dirname + '/withdraw_page/withdraw_page.html'));
+		//app.use(express.static(path.join(__dirname, '/nodelogin/static')));
+		
+
+	}); 
+	app.get('/deposit', function(request, response) {  //need to include to this because it first ran with node login.js
+	
+		response.sendFile(path.join(__dirname + '/Depost/deposit.html'));
+		//app.use(express.static(path.join(__dirname, '/Depost/public')));
+		//app.post('/passwordreset',require('./Depost/deposit'));
+	
+	
+	}); 
+	app.get('/accounts', function(request, response) {  //need to include to this because it first ran with node login.js
+	
+		response.sendFile(path.join(__dirname + '/accounts/accounts.html'));
+		//app.use(express.static(path.join(__dirname, '/Depost/public')));
+		//app.post('/passwordreset',require('./Depost/deposit'));
+	
+	
+	}); 
+	
+	app.get('/transfer', function(request, response) {  //need to include to this because it first ran with node login.js
+		
+		response.sendFile(path.join(__dirname + '/transfer/transfer.html'));
+		//app.use(express.static(path.join(__dirname, '/Depost/public')));
+		app.post('/transfers',require('./transfer/transferapp'));
+	
+	}); 
+	app.get('/withdraw', function(request, response) {
+	
+		response.sendFile(path.join(__dirname + '/withdraw_page/withdraw_page.html'));
+		app.post('/withdraws',require('./withdraw_page/withdraw'));
+			
+	
+		}); 
 module.exports = app;
 
 app.listen(5000);

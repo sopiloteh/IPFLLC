@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "alert": "^5.0.10",
     "express": "^4.17.3",
     "express-session": "^1.17.2",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "popups": "^1.1.3"
   }
 }

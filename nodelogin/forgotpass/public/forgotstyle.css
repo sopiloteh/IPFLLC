@@ -1,0 +1,82 @@
+* {
+    /*box-sizing: border-box;*/
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    
+}
+body {
+    background-color: #435165;
+    
+
+}
+.Forgotpassword {
+    width: 400px;
+    margin: 20vh auto 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 0px;
+    font-size: 20px;
+
+    
+}
+.Forgotpassword h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+
+.Forgotpassword form label {
+    display: flex;
+    justify-content: left;
+   
+  
+} 
+
+.Forgotpassword form input[type=email],.Forgotpassword form input[type="Security1"],.Forgotpassword form input[type="Security2"] {
+    width: 350px;
+    height: 60px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}  
+.Forgotpassword form input[type="submit"] {
+    width: 45%;
+    padding: 15px;
+
+   margin-top: 20px;
+    background-color: #3274d6;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+    float:right; 
+    
+}
+.Forgotpassword form input[type="cancel"]{
+    width: 40%;
+    padding: 15px;
+   margin-top: 20px;
+    background-color: #3274d6;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+    /*float:left; */
+    text-align: center; 
+}
+
+.Forgotpassword form input[type="submit"]:hover,.Forgotpassword form input[type="cancel"]:hover {
+  background-color: #2868c7;
+    transition: background-color 0.2s;
+}
+/*
+.Forgotpassword form .error {
+    color: #ff3860;
+    font-size: 15px;
+    height: 70px;
+  
+    /*error message
+} */
